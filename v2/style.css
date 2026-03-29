@@ -4,6 +4,11 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: #f4f6fb;
   color: #222;
+  overflow-x: hidden; /* Prevent Chrome horizontal bleed */
+}
+
+html {
+  overflow-x: hidden; /* Extra safety for Chrome */
 }
 
 .app {
@@ -12,22 +17,22 @@ body {
   padding: 20px;
 }
 
-/* Puzzle wrapper — holds the blue frame safely */
+/* Puzzle wrapper — blue frame, Chrome-safe */
 .puzzle-wrapper {
   background: #c7d4e6; /* blue frame */
   padding: 6px;
   border-radius: 8px;
-  width: fit-content;
+  display: inline-block; /* FIX: Chrome handles this correctly */
   margin: 0 auto 16px auto;
 }
 
-/* Puzzle grid (classic desktop) */
+/* Puzzle grid (classic fixed-size desktop) */
 .puzzle {
   display: grid;
   grid-template-columns: repeat(8, 40px);
   grid-template-rows: repeat(8, 40px);
   gap: 2px;
-  background: transparent; /* FIX: no blue overflow */
+  background: transparent; /* Prevent blue overflow */
 }
 
 /* Grid cells */
@@ -164,7 +169,4 @@ button:hover {
   .clue-column {
     width: 100%;
   }
-}
-* {
-  outline: 1px solid red !important;
 }
