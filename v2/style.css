@@ -12,17 +12,22 @@ body {
   padding: 20px;
 }
 
+/* Puzzle wrapper — holds the blue frame safely */
+.puzzle-wrapper {
+  background: #c7d4e6; /* blue frame */
+  padding: 6px;
+  border-radius: 8px;
+  width: fit-content;
+  margin: 0 auto 16px auto;
+}
+
 /* Puzzle grid (classic desktop) */
 .puzzle {
   display: grid;
   grid-template-columns: repeat(8, 40px);
   grid-template-rows: repeat(8, 40px);
   gap: 2px;
-  background: #c7d4e6;
-  padding: 6px;
-  border-radius: 8px;
-  margin: 0 auto 16px auto;
-  width: fit-content;
+  background: transparent; /* FIX: no blue overflow */
 }
 
 /* Grid cells */
@@ -146,7 +151,7 @@ button:hover {
   margin-bottom: 12px;
 }
 
-/* Simple mobile layout (not fully responsive) */
+/* Simple mobile layout */
 @media (max-width: 768px) {
   #mobile-clue-bar {
     display: block;
