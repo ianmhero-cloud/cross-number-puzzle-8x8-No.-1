@@ -1,0 +1,82 @@
+/* Global reset & layout safety */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Body typography */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* App wrapper */
+.app {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 0 10px;
+}
+
+/* Responsive puzzle grid */
+.puzzle {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto 20px auto;
+  gap: 2px;
+}
+
+/* Grid cells */
+.puzzle div {
+  background: white;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(14px, 3vw, 18px);
+}
+
+.puzzle .block {
+  background: black;
+}
+
+/* Controls */
+.controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Clue container */
+.clue-container {
+  padding: 10px 0;
+}
+
+/* Clue column */
+.clue-column {
+  background: #e0f0ff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Clue list */
+.clue-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.clue-list li {
+  margin: 6px 0;
+  line-height: 1.4;
+}
