@@ -3,31 +3,36 @@ body {
   font-family: Arial, sans-serif;
   margin: 20px;
   background: #f7f7f7;
+  display: flex;
+  justify-content: center;
 }
 
 /* App wrapper */
 .app {
   max-width: 800px;
+  width: 100%;
   margin: 0 auto;
 }
 
-/* Puzzle grid */
+/* Responsive puzzle grid */
 .puzzle {
   display: grid;
-  grid-template-columns: repeat(8, 40px);
-  grid-template-rows: repeat(8, 40px);
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 360px; /* keeps desktop crisp */
+  margin: 0 auto 20px auto;
   gap: 2px;
-  margin-bottom: 20px;
 }
 
+/* Grid cells */
 .puzzle div {
-  width: 40px;
-  height: 40px;
   background: white;
   border: 1px solid #ccc;
-  text-align: center;
-  line-height: 40px;
-  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(14px, 3vw, 18px);
 }
 
 .puzzle .block {
@@ -37,14 +42,15 @@ body {
 /* Controls */
 .controls {
   margin-bottom: 20px;
+  text-align: center;
 }
 
-/* Clue container (full width, no background) */
+/* Clue container */
 .clue-container {
   padding: 10px 0;
 }
 
-/* Each clue column gets the blue background */
+/* Clue column */
 .clue-column {
   background: #e0f0ff;
   padding: 15px;
@@ -52,7 +58,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* Clue list styling */
+/* Clue list */
 .clue-list {
   list-style: none;
   padding: 0;
@@ -61,4 +67,5 @@ body {
 
 .clue-list li {
   margin: 6px 0;
+  line-height: 1.4;
 }
