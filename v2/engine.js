@@ -415,4 +415,5 @@ document.getElementById("check-btn").addEventListener("click", () => {
 // ------------------------------
 // INITIALISE v2
 // ------------------------------
-loadPuzzleFromFile("puzzles/puzzle-001.json");
+loadPuzzleFromFile("./puzzles/puzzle-001.json");
+
