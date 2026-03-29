@@ -210,3 +210,23 @@ button:hover {
   max-width: 320px;
   flex-shrink: 0;
 }
+/* Layout: grid + clues side-by-side */
+.app {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Clue container (the blue panel) */
+.clue-container {
+  background: #e0f0ff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 320px;
+  flex-shrink: 0;
+}
+
+/* Two columns inside the clue panel */
+.clue-column {
+  margin-bottom: 20px;
+}
